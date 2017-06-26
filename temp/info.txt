@@ -1,0 +1,1 @@
+1.input标签，type="text"是符合w3c盒式模型的，另外就是button标签不符合w3c盒式模型
