@@ -16,9 +16,15 @@ body {
     flex-direction: column;
 }
 
+.login-titlebar {
+    width: 100%;
+    height: auto;
+
+    -webkit-app-region: drag;
+}
+
 .window-control {
     height: 30px;
-    align-self: flex-end;
 
     float: right;
 }
@@ -103,6 +109,8 @@ body {
     color:#aaaaaa;
     background: inherit;
 
+    -webkit-app-region: no-drag;
+
     height: 100%;
     width: 45px;
 }
@@ -122,6 +130,8 @@ body {
     padding: 0px;
     margin: 0px;
     display: inline-block;
+
+    -webkit-app-region: no-drag;
 
     color: #aaaaaa;
     background: inherit;

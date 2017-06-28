@@ -1,0 +1,91 @@
+/*为了能够实现各个分区边界能够拖动的效果，此处使用浮动与定位*/
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-titlebar {
+    width: 100%;
+    height: auto;
+
+    -webkit-app-region: drag;
+}
+
+.window-control {
+    /*height: 30px;*/
+    float: right;
+
+    -webkit-app-region: no-drag;
+}
+
+/*关闭按钮样式*/
+#close-button {
+    border: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+
+    overflow: hidden;
+    color:#aaaaaa;
+    background: inherit;
+
+    height: 100%;
+    width: 45px;
+}
+
+#close-button:hover {
+    background: #ff0000;
+}
+
+#close-button:active {
+    background: #dd0000;
+}
+
+/*最小化按钮样式*/
+#minimize-button {
+    border: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+
+    color: #aaaaaa;
+    background: inherit;
+
+    overflow: hidden;
+
+    height: 100%;
+    width: 45px;
+}
+
+#minimize-button:hover {
+    color: #ffffff;
+    background: #bbbbbb;
+}
+
+#minimize-button:active {
+    color: #ffffff;
+    background: #aaaaaa;
+}
+
+svg {
+    fill: currentColor;
+}
+
+/*主要内容区布局配置*/
+.main-content {
+    display: flex;
+    flex-direction: row;
+}
+
+/*右侧详情区布局配置*/
+.details {
+    display: flex;
+    flex-direction: column;
+}
