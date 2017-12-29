@@ -1,10 +1,24 @@
 /*为了能够实现各个分区边界能够拖动的效果，此处使用浮动与定位*/
+/*此处必须加上对于html标签的宽度以及高度的限定，不然页面内容不能占据整个页框 */
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
+    background-color: #2b3137;
+
+    width: 100%;
+    height: 100%;
+
     margin: 0px;
     padding: 0px;
 }
 
 #main-page {
+    width: 100%;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
 }
@@ -13,11 +27,17 @@ body {
     width: 100%;
     height: auto;
 
+    /*可拖动*/
     -webkit-app-region: drag;
+
+    border-bottom: 1px solid #272525;
 }
 
 .window-control {
-    /*height: 30px;*/
+    /* 如果此处不设置height属性的话，那么最小化以及关闭按钮就不能顶到窗格的顶端，为什么？*/
+    /* 网上一种说法是：因为父元素的高度不清楚，所以其子元素如果设置高度为100%并不能确定子元素高度 */
+    height: 30px;
+    overflow: hidden;
     float: right;
 
     -webkit-app-region: no-drag;
@@ -82,10 +102,113 @@ svg {
 .main-content {
     display: flex;
     flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+}
+
+.type-divider {
+    width: 100%;
+    height: 3px;
+
+    background: black;
+}
+
+/*左侧类别显示区布局*/
+.consume-type {
+    display: flex;
+    flex-direction: column;
+
+    flex-basis: 200px;
+    flex-grow: 0;
+}
+
+.template-item {
+    width: 100%;
+
+    background: inherit;
+    
+    color: white;
+}
+
+.template-item:focus {
+    background: #777777;
+}
+
+/* 类别编辑按钮显示区 */
+.type-edit-area {
+    height: 45px;
+    width: 100%;
+}
+
+.l-r-divider {
+    width: 3px;
+    height: 100%;
+
+    background: black;
 }
 
 /*右侧详情区布局配置*/
 .details {
     display: flex;
     flex-direction: column;
+
+    flex-basis: 0%;
+    flex-grow: 1;
 }
+
+/* 界面按钮样式 */
+.type-button {
+    display: inline-block;
+    outline: none;
+    border: none;
+
+    width: 45px;
+    height: 100%;
+
+    background: inherit;
+    color: #3399ff;
+}
+
+.details-button {
+	align-self: center;
+}
+
+/*详细消费内容细节列表显示区*/
+.details-display-list {
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	
+}
+
+/*消费内容单条条目布局*/
+.list-item {
+	/*width: 100%;*/
+	height: auto;
+}
+
+.item-add-group {
+
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-edit-button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.consume-date-div, .consume-num-div {
+	width: 50%;
+	height: auto;
+	display: inline;
+}
+
+.consume-detail-div {
+	width: 100%;
+}
+
